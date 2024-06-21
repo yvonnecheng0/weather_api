@@ -30,14 +30,14 @@ def save_to_database(df, db_name, table_name):
 
 def query_database(engine, table_name):
     with engine.connect() as connection:
-        results = connection.execute(db.text(f"SELECT * FROM {table_name};")).fetchall()
+        results = connection.execute(db.text
+        (f"SELECT * FROM {table_name};")).fetchall()
         return pd.DataFrame(results, columns=['City', 'Temperature', 'Weather'])
 
 
 if __name__ == "__main__":
     api_key = 'e9ade545133ca72b0db7d4ba4ef4200c'
     city = 'London'
-    
     weather_data = fetch_weather_data(api_key, city)
     df = convert_to_dataframe(weather_data)
     engine = save_to_database(df, 'weather_data', 'weather')
