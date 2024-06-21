@@ -23,8 +23,8 @@ class TestWeather(unittest.TestCase):
             self.assertEqual(weather_data['Weather'], 'clear sky')
 
     def test_convert_to_dataframe(self):
-        weather_data = {'City': 'London', 'Temperature': 15, 'Weather': 'clear sky'}
-        df = convert_to_dataframe(weather_data)
+        data = {'City': 'London', 'Temperature': 15, 'Weather': 'clear sky'}
+        df = convert_to_dataframe(data)
         self.assertTrue(isinstance(df, pd.DataFrame))
         self.assertEqual(df.iloc[0]['City'], 'London')
         self.assertEqual(df.iloc[0]['Temperature'], 15)
