@@ -29,10 +29,9 @@ def save_to_database(df, db_name, table_name):
 
 
 def query_database(engine, table_name):
-    with engine.connect() as connection:
-        results = connection.execute(db.text
-        (f"SELECT * FROM {table_name};")).fetchall()
-        return pd.DataFrame(results, columns=['City', 'Temperature', 'Weather'])
+    with engine.connect() as c:
+        res = c.execute(db.text(f"SELECT * FROM {table_name};")).fetchall()
+        return pd.DataFrame(res, columns=['City', 'Temperature', 'Weather'])
 
 
 if __name__ == "__main__":
