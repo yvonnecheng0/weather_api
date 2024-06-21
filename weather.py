@@ -32,5 +32,5 @@ df.to_sql('weather', con=engine, if_exists='replace', index=False)
 
 # Write query and print out requests
 with engine.connect() as connection:
-    query_res = connection.execute(db.text("SELECT * FROM weather;")).fetchall()
-    print(pd.DataFrame(query_res, columns=['City', 'Temperature', 'Weather']))
+    results = connection.execute(db.text("SELECT * FROM weather;")).fetchall()
+    print(pd.DataFrame(results, columns=['City', 'Temperature', 'Weather']))
