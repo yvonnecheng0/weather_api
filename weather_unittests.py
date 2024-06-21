@@ -31,8 +31,8 @@ class TestWeather(unittest.TestCase):
         self.assertEqual(df.iloc[0]['Weather'], 'clear sky')
 
     def test_save_to_database_and_query(self):
-        weather_data = {'City': 'London', 'Temperature': 15, 'Weather': 'clear sky'}
-        df = convert_to_dataframe(weather_data)
+        data = {'City': 'London', 'Temperature': 15, 'Weather': 'clear sky'}
+        df = convert_to_dataframe(data)
         engine = save_to_database(df, 'test_weather_data', 'weather')
         results = query_database(engine, 'weather')
         self.assertEqual(results.iloc[0]['City'], 'London')
