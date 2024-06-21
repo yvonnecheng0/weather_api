@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-import sqlalchemy as db 
+import sqlalchemy as db
 
 api_key = 'e9ade545133ca72b0db7d4ba4ef4200c'
 city = 'London'
@@ -32,5 +32,5 @@ df.to_sql('weather', con=engine, if_exists='replace', index=False)
 
 # Write query and print out requests
 with engine.connect() as connection:
-    query_results = connection.execute(db.text("SELECT * FROM weather;")).fetchall()
-    print(pd.DataFrame(query_results, columns=['City', 'Temperature', 'Weather']))
+    query_res = connection.execute(db.text("SELECT * FROM weather;")).fetchall()
+    print(pd.DataFrame(query_res, columns=['City', 'Temperature', 'Weather']))
