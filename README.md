@@ -2,6 +2,8 @@
 
 This project fetches current weather data for a specific city using the OpenWeatherMap API and stores it in a SQLite database using pandas and SQLAlchemy.
 
+[![Check Style](https://github.com/yvonnecheng0/weather_api/actions/workflows/check_style.yaml/badge.svg)](https://github.com/yvonnecheng0/weather_api/actions/workflows/check_style.yaml)
+
 ## Setup Instructions
 
 ### Prerequisites
