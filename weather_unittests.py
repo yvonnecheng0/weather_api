@@ -1,6 +1,11 @@
 import unittest
 from unittest.mock import patch
-from weather import *
+from weather import (
+    fetch_weather_data,
+    convert_to_dataframe,
+    save_to_database,
+    query_database
+)
 import pandas as pd
 import sqlalchemy as db
 
